@@ -10,8 +10,21 @@ pragma solidity 0.8.18;
 contract PasswordStore {
     error PasswordStore__NotOwner();
 
+
+ /*//////////////////////////////////////////////////////////////
+                            STATE VARIABLES
+    //////////////////////////////////////////////////////////////*/
+
+
     address private s_owner;
+    // The s_password can still be accessed by anyone who knows the storage slot, making your password private does not mean it is secure or safe!!
     string private s_password;
+
+
+ /*//////////////////////////////////////////////////////////////
+                                 EVENTS
+    //////////////////////////////////////////////////////////////*/
+
 
     event SetNewPassword();
 
@@ -23,7 +36,12 @@ contract PasswordStore {
      * @notice This function allows only the owner to set a new password.
      * @param newPassword The new password to set.
      */
-    function setPassword(string memory newPassword) external {
+
+
+    // @audit - This function allows anyone to set a new password, not just the owner!!!
+    // Common practice is to use the onlyOwner modifier to restrict access to functions that should only be called by the owner
+    // Attack Vector - Missing Access Control.
+     function setPassword(string memory newPassword) external {
         s_password = newPassword;
         emit SetNewPassword();
     }
@@ -32,6 +50,10 @@ contract PasswordStore {
      * @notice This allows only the owner to retrieve the password.
      * @param newPassword The new password to set.
      */
+
+    // @audit - Your password can ve vulnerable off chain
+    // Attack Vector - Off-Chain Data Exposure AKA Public data exploitation.
+    // @audit - Error in the Doc String, this function does not take a parameter.
     function getPassword() external view returns (string memory) {
         if (msg.sender != s_owner) {
             revert PasswordStore__NotOwner();
