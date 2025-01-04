@@ -1,5 +1,3 @@
-
-=======
 # PasswordStore Contract Audit
 
 This repository contains the audit report for the **PasswordStore smart contract**, prepared by **0xSnowEth**. The report includes details about the smart contract's security, potential vulnerabilities, and suggested improvements.
@@ -58,4 +56,3 @@ This project is licensed under the **MIT License**.
 *Audited by [0xSnowEth](https://x.com/0xSnowEth)*
 
 
->>>>>>> 5fdee5d2f99a39a6f7817ec41458f8a75472a5b5
