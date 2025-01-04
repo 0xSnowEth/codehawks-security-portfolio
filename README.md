@@ -10,10 +10,6 @@ This repository contains the audit report for the **PasswordStore smart contract
 
 ---
 
-## Audit Summary
-
-This audit focuses on the security of the **PasswordStore smart contract** and identifies the following key findings:
-
 ### High-Risk Findings:
 - **Passwords stored on-chain are visible to anyone**, regardless of Solidity variable visibility.
 - The **setPassword function** can be called by anyone, allowing unauthorized users to change the password.
@@ -52,31 +48,6 @@ This audit focuses on the security of the **PasswordStore smart contract** and i
 - **Foundry** for reading contract storage off-chain.
 
 ---
-
-## How to Use
-
-### Clone the Repository
-
-Clone this repository to your local machine using the following command:
-
-```bash
-git clone https://github.com/yourusername/PasswordStoreAudit.git
-```
-
-### Review the Audit Report
-
-The full audit report is available in the **PasswordStore_Audit_Report.pdf** file. It provides detailed information about the findings, recommendations, and proof of concept for each identified issue.
-
-
-### Deploy the Contract
-
-Follow the instructions in the **src/PasswordStore.sol** file to deploy the contract to your own Ethereum network or local testnet.
-
-
-### Mitigation
-
-Use the recommendations from the audit to address the vulnerabilities identified. Make sure to thoroughly test the contract after applying any changes.
-
 
 ### License
 
