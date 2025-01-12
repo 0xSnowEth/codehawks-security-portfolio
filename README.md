@@ -1,6 +1,6 @@
 # Snow X Audit Reports
 
-<img src="./cyfrin-logo.png" alt="Snow" width="200" >
+<img src="./Snow-X.jpeg" alt="Snow X Logo" width="200">
 
 | Publish    | Audit Start | Audit End  | Report                                                                                    | C   | H   | M   | L   | I   | G   |
 | ---------- | ----------- | ---------- | ----------------------------------------------------------------------------------------- | --- | --- | --- | --- | --- | --- |
